@@ -86,7 +86,6 @@
 
 - (void)dealloc {
     [[NSNotificationCenter defaultCenter] removeObserver:self];
-    NSLog(@"GCTextView移除观察者");
 }
 
 @end

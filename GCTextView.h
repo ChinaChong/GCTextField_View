@@ -6,9 +6,9 @@
 //  Copyright © 2016年 ChinaChong. All rights reserved.
 //
 
-#import "CSNPlaceholderTextView.h"
+#import <UIKit/UIKit.h>
 
-@interface GCTextView : CSNPlaceholderTextView<UITextViewDelegate>
+@interface GCTextView : UITextView<UITextViewDelegate>
 @property (nonatomic,assign) NSInteger characterLength; // 用字符长度限制
 @property (nonatomic,assign) NSInteger bytesCount;      // 用字节数限制
 - (void)limitInput;
