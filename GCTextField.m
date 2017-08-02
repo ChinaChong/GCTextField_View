@@ -8,6 +8,32 @@
 
 #import "GCTextField.h"
 
+#pragma mark - 计算长度(中文占2,英文占1)
+@interface NSString (JudgeString)
+
+- (int)stringLengthOfBytesConvertToInt;
+
+@end
+
+@implementation NSString (JudgeString)
+
+- (int)stringLengthOfBytesConvertToInt {
+    int strlength = 0;
+    char *p = (char*)[self cStringUsingEncoding:NSUnicodeStringEncoding];
+    for (int i=0 ; i<[self lengthOfBytesUsingEncoding:NSUnicodeStringEncoding] ;i++) {
+        if (*p) {
+            p++;
+            strlength++;
+        }
+        else {
+            p++;
+        }
+    }
+    return strlength;
+}
+
+@end
+
 @interface GCTextField ()
 
 
